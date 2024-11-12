@@ -1,0 +1,19 @@
+.cell {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #333;
+    cursor: pointer;
+  }
+  
+  .cell.revealed {
+    background-color: #ddd;
+    cursor: default;
+  }
+  
+  .cell.mine {
+    color: red;
+  }
+  

@@ -1,0 +1,9 @@
+.board {
+    display: inline-block;
+    margin-top: 20px;
+  }
+  
+  .board-row {
+    display: flex;
+  }
+  

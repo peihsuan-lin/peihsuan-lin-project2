@@ -1,18 +1,18 @@
 import React from 'react';
-import Typography from '@mui/material/Typography';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import { GameProvider } from '../context/game-context';
+import GameHeader from '../components/game-header';
+import Board from '../components/board';
 
 export default function Game() {
   const { difficulty } = useParams();
 
   return (
-    <div>
-      <Typography variant="h4">Playing at difficulty level: {difficulty}</Typography>
-      <div>
-        <Link to="/game/easy">Easy</Link> |{' '}
-        <Link to="/game/medium">Medium</Link> |{' '}
-        <Link to="/game/hard">Hard</Link>
+    <GameProvider difficulty={difficulty} key={difficulty}>
+      <div className="game">
+        <GameHeader />  {/* Displays game status, reset, and difficulty links */}
+        <Board />       {/* Displays the Minesweeper grid */}
       </div>
-    </div>
+    </GameProvider>
   );
 }

@@ -20,11 +20,11 @@ const router = createBrowserRouter([
             Component: DashboardPage,
           },
           {
-            path: 'game', // Add this route to redirect to a default difficulty
+            path: 'game',
             element: <Navigate to="/game/easy" replace />,
           },
           {
-            path: 'game/:difficulty', // Dynamic route for difficulty levels
+            path: 'game/:difficulty',
             Component: Game,
           },
           {
