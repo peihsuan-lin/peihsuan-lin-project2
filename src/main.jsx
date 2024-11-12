@@ -1,24 +1,40 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import {createBrowserRouter, RouterProvider,} from "react-router-dom";
-import Home from './pages/Home';
-import Game from './pages/Game';
-import Rules from './pages/Rules';
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
+import App from './App';
+import Layout from './layouts/dashboard';
+import DashboardPage from './pages';
+import Game from './pages/game';
+import Rules from './pages/rules';
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <Home />,
+    Component: App, 
+    children: [
+      {
+        path: '/',
+        Component: Layout,
+        children: [
+          {
+            path: '',
+            Component: DashboardPage,
+          },
+          {
+            path: 'game', // Add this route to redirect to a default difficulty
+            element: <Navigate to="/game/easy" replace />,
+          },
+          {
+            path: 'game/:difficulty', // Dynamic route for difficulty levels
+            Component: Game,
+          },
+          {
+            path: 'rules',
+            Component: Rules,
+          },
+        ],
+      },
+    ],
   },
-  {
-    path: "/game/:difficulty",
-    element: <Game />,
-  },
-  {
-    path: "/rules",
-    element: <Rules />,
-  }
 ]);
 
 createRoot(document.getElementById('root')).render(

@@ -1,14 +1,18 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import Typography from '@mui/material/Typography';
+import { useParams, Link } from 'react-router-dom';
 
-function Game() {
+export default function Game() {
   const { difficulty } = useParams();
+
   return (
     <div>
-      <h1>Game Page</h1>
-      <p>Playing at difficulty level: {difficulty}</p>
+      <Typography variant="h4">Playing at difficulty level: {difficulty}</Typography>
+      <div>
+        <Link to="/game/easy">Easy</Link> |{' '}
+        <Link to="/game/medium">Medium</Link> |{' '}
+        <Link to="/game/hard">Hard</Link>
+      </div>
     </div>
   );
 }
-
-export default Game;

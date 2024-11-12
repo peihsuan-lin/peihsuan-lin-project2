@@ -1,12 +1,12 @@
-import React from 'react';
+import * as React from 'react';
+import Typography from '@mui/material/Typography';
 
-function Rules() {
+export default function Rules() {
   return (
     <div>
-      <h1>Game Rules</h1>
-      <p>Here are the rules for the game...</p>
+      <Typography>
+        Here are the rules for the game...
+      </Typography>
     </div>
   );
 }
-
-export default Rules;
