@@ -1,19 +1,40 @@
 .cell {
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #333;
-    cursor: pointer;
-  }
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px ridge #7c7c7c; /* Border for each cell */
+  cursor: pointer;
+  transition: background-color 0.35s ease;
+  border-radius: 0;
+}
+
+.cell.unrevealed:hover {
+  background-color: rgb(221, 221, 221); /* Hover color */
+}
+
+.cell.revealed {
+  background-color: #d3d3d3; /* Revealed cells color */
+  cursor: default; /* Cursor changes to indicate the cell is inactive */
   
-  .cell.revealed {
-    background-color: #ddd;
-    cursor: default;
-  }
-  
-  .cell.mine {
-    color: red;
-  }
-  
+}
+
+.cell.mine {
+  color: red; /* Color for mine cells */
+}
+.cell.revealed.number-1 {
+  color: green;
+}
+
+.cell.revealed.number-2 {
+  color: blue;
+}
+
+.cell.revealed.number-3 {
+  color: red;
+}
+
+.cell.revealed.number-4 {
+  color: darkblue;
+}

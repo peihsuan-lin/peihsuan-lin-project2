@@ -1,6 +1,7 @@
 import React from 'react';
+import { Paper, Typography } from '@mui/material';
 import { useGame } from '../context/game-context';
-import '../styles/cell.css'; // Importing cell-specific styles
+import '../styles/cell.css';
 
 export default function Cell({ row, col, cellData }) {
   const { handleCellClick } = useGame();
@@ -9,12 +10,26 @@ export default function Cell({ row, col, cellData }) {
     handleCellClick(row, col);
   };
 
+  // Define CSS classes based on cell state and neighboring mine count
+  const cellClass = `
+    cell 
+    ${cellData.isRevealed ? 'revealed' : 'unrevealed'} 
+    ${cellData.isMine ? 'mine' : cellData.neighborMines > 0 ? `number-${cellData.neighborMines}` : ''}
+  `;
+
   return (
-    <div
-      className={`cell ${cellData.isRevealed ? 'revealed' : ''} ${cellData.isMine ? 'mine' : ''}`}
+    <Paper
+      elevation={3}
       onClick={handleClick}
+      className={cellClass}
+      sx={{
+        borderRadius: 0,
+        backgroundColor: cellData.isRevealed && cellData.isMine ? '#f28b82' : undefined,
+      }}
     >
-      {cellData.isRevealed ? (cellData.isMine ? '💣' : cellData.neighborMines || '') : ''}
-    </div>
+      <Typography variant="body2" sx={{ fontWeight: 'bold' }}>
+        {cellData.isRevealed ? (cellData.isMine ? '💣' : cellData.neighborMines || '') : ''}
+      </Typography>
+    </Paper>
   );
 }
