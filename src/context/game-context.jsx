@@ -38,7 +38,6 @@ export const GameProvider = ({ difficulty, children }) => {
         board[randomRow][randomCol].isMine = true;
         minesPlaced++;
 
-        // Update neighbor mine counts for surrounding cells
         for (let r = randomRow - 1; r <= randomRow + 1; r++) {
           for (let c = randomCol - 1; c <= randomCol + 1; c++) {
             if (r >= 0 && r < rows && c >= 0 && c < cols && !board[r][c].isMine) {
@@ -64,15 +63,14 @@ export const GameProvider = ({ difficulty, children }) => {
 
   const revealAdjacentSafeCells = (newBoard, row, col) => {
     const directions = [
-      [-1, 0], [1, 0], [0, -1], [0, 1], // orthogonal neighbors
-      [-1, -1], [-1, 1], [1, -1], [1, 1] // diagonal neighbors
+      [-1, 0], [1, 0], [0, -1], [0, 1], 
+      [-1, -1], [-1, 1], [1, -1], [1, 1]
     ];
 
     for (const [dr, dc] of directions) {
       const newRow = row + dr;
       const newCol = col + dc;
 
-      // Check if the cell is within bounds and not already revealed
       if (
         newRow >= 0 && newRow < rows &&
         newCol >= 0 && newCol < cols &&
@@ -94,24 +92,20 @@ export const GameProvider = ({ difficulty, children }) => {
     if (gameStatus !== 'ongoing' || board[row][col].isRevealed) return;
 
     setBoard((prevBoard) => {
-      // Clone the board to ensure immutability
       const newBoard = prevBoard.map((boardRow) => boardRow.map((cell) => ({ ...cell })));
 
-      // Reveal the clicked cell
       if (newBoard[row][col].isMine) {
-        setGameStatus('lost'); // End game if a mine is clicked
+        setGameStatus('lost'); 
         newBoard[row][col].isRevealed = true;
       } else {
         newBoard[row][col].isRevealed = true;
-        setRevealedCount((count) => count + 1); // Track revealed cells for win condition
+        setRevealedCount((count) => count + 1);
 
-        // If cell has 0 neighboring mines, reveal adjacent cells
         if (newBoard[row][col].neighborMines === 0) {
           revealAdjacentSafeCells(newBoard, row, col);
         }
       }
 
-      // Check for win condition: all non-mine cells revealed
       const totalSafeCells = rows * cols - mines;
       if (revealedCount + 1 === totalSafeCells) {
         setGameStatus('won');

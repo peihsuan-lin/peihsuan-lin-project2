@@ -10,8 +10,8 @@ export default function Game() {
   return (
     <GameProvider difficulty={difficulty} key={difficulty}>
       <div className="game">
-        <GameHeader />  {/* Displays game status, reset, and difficulty links */}
-        <Board />       {/* Displays the Minesweeper grid */}
+        <GameHeader /> 
+        <Board />      
       </div>
     </GameProvider>
   );

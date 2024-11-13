@@ -10,7 +10,6 @@ export default function Cell({ row, col, cellData }) {
     handleCellClick(row, col);
   };
 
-  // Define CSS classes based on cell state and neighboring mine count
   const cellClass = `
     cell 
     ${cellData.isRevealed ? 'revealed' : 'unrevealed'} 

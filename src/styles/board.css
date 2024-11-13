@@ -1,9 +1,12 @@
 .board {
-    display: inline-block;
-    margin-top: 20px;
-  }
-  
-  .board-row {
-    display: flex;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 10px 0;
+  width: fit-content;
+}
+
+.board-row {
+  display: flex;
+}

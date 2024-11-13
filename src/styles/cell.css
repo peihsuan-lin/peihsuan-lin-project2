@@ -4,24 +4,24 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px ridge #7c7c7c; /* Border for each cell */
+  border: 1px ridge #7c7c7c;
   cursor: pointer;
   transition: background-color 0.35s ease;
   border-radius: 0;
 }
 
 .cell.unrevealed:hover {
-  background-color: rgb(221, 221, 221); /* Hover color */
+  background-color: rgb(221, 221, 221);
 }
 
 .cell.revealed {
-  background-color: #d3d3d3; /* Revealed cells color */
-  cursor: default; /* Cursor changes to indicate the cell is inactive */
+  background-color: #d3d3d3
+  cursor: default; 
   
 }
 
 .cell.mine {
-  color: red; /* Color for mine cells */
+  color: red;
 }
 .cell.revealed.number-1 {
   color: green;

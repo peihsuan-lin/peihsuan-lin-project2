@@ -1,7 +1,7 @@
 import React from 'react';
 import { useGame } from '../context/game-context';
-import Cell from './cell'; // Correct import path as `cell` is in the same folder
-import '../styles/board.css'; // Importing board styles
+import Cell from './cell';
+import '../styles/board.css';
 
 export default function Board() {
   const { board } = useGame();
