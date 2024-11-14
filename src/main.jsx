@@ -31,6 +31,7 @@ const router = createBrowserRouter([
             path: 'rules',
             Component: Rules,
           },
+          { path: '*', element: <Navigate to="/" replace /> },
         ],
       },
     ],
