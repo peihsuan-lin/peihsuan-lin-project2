@@ -1,8 +1,20 @@
-# React + Vite
+# Minesweeper Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is the classic Minesweeper game built with **React**, **React Router** and **Material UI**.
+🚀 **Live Demo**: Play it here! 👉 https://peihsuan-lin-project2.onrender.com
 
-Currently, two official plugins are available:
+## Getting Started
+Follow these steps to get project up locally:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Install the dependencies
+`npm install`
+2. Run the application
+`npm run dev`
+3. Open your browser and start playing!
+
+## 📜 How to Play
+1. Objective: Uncover all safe cells without hitting a mine!
+2. Cell Types:
+   - Number: Shows how many mines are nearby.
+   - Empty Space: Clears a safe area automatically.
+   - Mine: Game over! 💥
