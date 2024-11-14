@@ -7,12 +7,16 @@ This project is the classic Minesweeper game built with **React**, **React Route
 Follow these steps to get project up locally:
 
 1. Install the dependencies
-`npm install`
+```
+npm install
+```
 2. Run the application
-`npm run dev`
+```
+npm run dev
+```
 3. Open your browser and start playing!
 
-## 📜 How to Play
+## How to Play
 1. Objective: Uncover all safe cells without hitting a mine!
 2. Cell Types:
    - Number: Shows how many mines are nearby.
