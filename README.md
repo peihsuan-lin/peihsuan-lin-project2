@@ -1,8 +1,10 @@
 # Minesweeper Game
 
 This project is the classic Minesweeper game built with **React**, **React Router** and **Material UI**.
+
 🚀 **Live Demo**: Play it here! 👉 https://peihsuan-lin-project2.onrender.com
 
+![GIF_20241113234418919](https://github.com/user-attachments/assets/e5f55456-fd1b-422a-b8ad-4b2740bd9054)
 ## Getting Started
 Follow these steps to get project up locally:
 
