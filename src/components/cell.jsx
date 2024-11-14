@@ -26,7 +26,7 @@ export default function Cell({ row, col, cellData }) {
         backgroundColor: cellData.isRevealed && cellData.isMine ? '#f28b82' : undefined,
       }}
     >
-      <Typography variant="body2" sx={{ fontWeight: 'bold', fontFamily: 'luckiest-guy-regular', fontSize : '1.5rem' }}>
+      <Typography variant="body2" sx={{ fontWeight: 'bold', fontFamily: 'luckiest-guy-regular', fontSize: '1.5rem' }}>
         {cellData.isRevealed ? (cellData.isMine ? '💣' : cellData.neighborMines || '') : ''}
       </Typography>
     </Paper>

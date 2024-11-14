@@ -28,7 +28,6 @@ export const GameProvider = ({ difficulty, children }) => {
       }))
     );
 
-    // Place mines randomly on the board
     let minesPlaced = 0;
     while (minesPlaced < mines) {
       const randomRow = Math.floor(Math.random() * rows);
@@ -63,7 +62,7 @@ export const GameProvider = ({ difficulty, children }) => {
 
   const revealAdjacentSafeCells = (newBoard, row, col) => {
     const directions = [
-      [-1, 0], [1, 0], [0, -1], [0, 1], 
+      [-1, 0], [1, 0], [0, -1], [0, 1],
       [-1, -1], [-1, 1], [1, -1], [1, 1]
     ];
 
@@ -80,7 +79,6 @@ export const GameProvider = ({ difficulty, children }) => {
         newBoard[newRow][newCol].isRevealed = true;
         setRevealedCount((count) => count + 1);
 
-        // If the neighboring cell has no mines around it, reveal its neighbors as well
         if (newBoard[newRow][newCol].neighborMines === 0) {
           revealAdjacentSafeCells(newBoard, newRow, newCol);
         }
@@ -95,7 +93,7 @@ export const GameProvider = ({ difficulty, children }) => {
       const newBoard = prevBoard.map((boardRow) => boardRow.map((cell) => ({ ...cell })));
 
       if (newBoard[row][col].isMine) {
-        setGameStatus('lost'); 
+        setGameStatus('lost');
         newBoard[row][col].isRevealed = true;
       } else {
         newBoard[row][col].isRevealed = true;

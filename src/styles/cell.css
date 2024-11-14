@@ -16,12 +16,13 @@
 
 .cell.revealed {
   background-color: #e4e3e3;
-  cursor: default; 
+  cursor: default;
 }
 
 .cell.mine {
   color: red;
 }
+
 .cell.revealed.number-1 {
   color: green;
 }

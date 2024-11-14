@@ -9,7 +9,7 @@ import Rules from './pages/rules';
 
 const router = createBrowserRouter([
   {
-    Component: App, 
+    Component: App,
     children: [
       {
         path: '/',
@@ -40,6 +40,6 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-     <RouterProvider router={router} />
+    <RouterProvider router={router} />
   </StrictMode>,
 )

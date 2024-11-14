@@ -10,8 +10,8 @@ export default function Game() {
   return (
     <GameProvider difficulty={difficulty} key={difficulty}>
       <div className="game">
-        <GameHeader /> 
-        <Board />      
+        <GameHeader />
+        <Board />
       </div>
     </GameProvider>
   );

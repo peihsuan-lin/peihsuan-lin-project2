@@ -5,7 +5,7 @@ export default function Rules() {
   return (
     <div>
       <Typography variant="h5" gutterBottom>
-      Welcome to Minesweeper! Here's how to play:
+        Welcome to Minesweeper! Here's how to play:
       </Typography>
       <Typography >
         <ol>
