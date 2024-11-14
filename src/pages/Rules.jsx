@@ -7,14 +7,7 @@ export default function Rules() {
       <Typography variant="h5" gutterBottom>
       Welcome to Minesweeper! Here's how to play:
       </Typography>
-      
-
-      <Typography paragraph>
-        <strong>Objective:</strong> The goal is to clear the grid of all safe cells without clicking on any bombs.
-      </Typography>
-
       <Typography >
-        <strong>How to Play:</strong>
         <ol>
           <li>When you click on a cell, one of two things will happen:
             <ul>
@@ -31,9 +24,9 @@ export default function Rules() {
       <Typography >
         <strong>Difficulty Levels:</strong>
         <ul>
-          <li><strong>Easy:</strong> Grid: 8x8, Bombs: 10 </li>
-          <li><strong>Medium:</strong> Grid: 16x16, Bombs: 40 </li>
-          <li><strong>Hard:</strong> Grid: 30x16, Bombs: 99 </li>
+          <li>Easy: 8x8, Bombs: 10 </li>
+          <li>Medium: 16x16, Bombs: 40 </li>
+          <li>Hard: 30x16, Bombs: 99 </li>
         </ul>
       </Typography>
 

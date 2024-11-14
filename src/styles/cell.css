@@ -15,9 +15,8 @@
 }
 
 .cell.revealed {
-  background-color: #d3d3d3
+  background-color: #e4e3e3;
   cursor: default; 
-  
 }
 
 .cell.mine {
